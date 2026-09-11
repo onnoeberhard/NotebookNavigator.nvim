@@ -32,6 +32,10 @@ local find_supported_repls = function()
     end
   end
 
+  if vim.g.loaded_slime == 1 or vim.fn.exists("*SlimeSend") == 1 then
+    available_repls[#available_repls + 1] = "slime"
+  end
+
   return available_repls
 end
 

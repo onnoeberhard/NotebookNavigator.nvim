@@ -32,7 +32,7 @@ local find_supported_repls = function()
     end
   end
 
-  if vim.g.loaded_slime == 1 or vim.fn.exists("*SlimeSend") == 1 then
+  if #vim.api.nvim_get_runtime_file("plugin/slime.vim", true) > 0 then
     available_repls[#available_repls + 1] = "slime"
   end
 

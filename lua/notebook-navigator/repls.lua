@@ -79,6 +79,13 @@ repls.molten = function(start_line, end_line, repl_args, cell_marker)
   return true
 end
 
+-- vim-slime
+---@diagnostic disable-next-line: unused-local
+repls.slime = function(start_line, end_line, repl_args, cell_marker)
+  vim.fn["slime#send_range"](start_line, end_line)
+  return true
+end
+
 -- no repl
 repls.no_repl = function(_) end
 
